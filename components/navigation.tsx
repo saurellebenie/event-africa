@@ -60,6 +60,12 @@ export default function Navigation({
               {t('nav.services')}
             </Link>
             <Link
+              href="/realisations"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {t('nav.realisations')}
+            </Link>
+            <Link
               href="/pricing"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
@@ -250,6 +256,13 @@ export default function Navigation({
             >
               <Store className="w-4 h-4" />
               {t('nav.services')}
+            </Link>
+            <Link
+              href="/realisations"
+              className="flex items-center gap-2 px-4 py-2.5 text-sm text-foreground hover:bg-muted rounded-lg transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {t('nav.realisations')}
             </Link>
             <Link
               href="/pricing"
