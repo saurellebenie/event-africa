@@ -49,6 +49,9 @@ interface RealisationDetail {
     nameFr: string
     nameEn: string
     provider: string
+    providerId: string
+    providerRating: number
+    providerReviews: number
     icon: string
   }[]
   testimonial: {
@@ -82,11 +85,11 @@ const realisationsData: Record<string, RealisationDetail> = {
       '/event-planner-coordination-clipboard.jpg',
     ],
     services: [
-      { nameFr: 'Decoration Complete', nameEn: 'Full Decoration', provider: 'Luxury Events Design', icon: 'decoration' },
-      { nameFr: 'Traiteur 450 Convives', nameEn: 'Catering for 450 Guests', provider: 'Culinary Creations', icon: 'catering' },
-      { nameFr: 'DJ & Animation', nameEn: 'DJ & Entertainment', provider: 'Groove Masters', icon: 'dj' },
-      { nameFr: 'Photographie & Video', nameEn: 'Photography & Video', provider: 'Memories Studio', icon: 'photo' },
-      { nameFr: 'Coordination Jour-J', nameEn: 'Day-of Coordination', provider: 'Premier Planners', icon: 'planner' },
+      { nameFr: 'Decoration Complete', nameEn: 'Full Decoration', provider: 'Luxury Events Design', providerId: '1', providerRating: 4.9, providerReviews: 128, icon: 'decoration' },
+      { nameFr: 'Traiteur 450 Convives', nameEn: 'Catering for 450 Guests', provider: 'Culinary Creations', providerId: '2', providerRating: 4.8, providerReviews: 95, icon: 'catering' },
+      { nameFr: 'DJ & Animation', nameEn: 'DJ & Entertainment', provider: 'Groove Masters', providerId: '3', providerRating: 4.7, providerReviews: 72, icon: 'dj' },
+      { nameFr: 'Photographie & Video', nameEn: 'Photography & Video', provider: 'Memories Studio', providerId: '4', providerRating: 5.0, providerReviews: 156, icon: 'photo' },
+      { nameFr: 'Coordination Jour-J', nameEn: 'Day-of Coordination', provider: 'Premier Planners', providerId: '5', providerRating: 4.9, providerReviews: 89, icon: 'planner' },
     ],
     testimonial: {
       textFr: "EvenIA a transforme notre vision en realite. Chaque detail etait parfait, de la decoration florale aux plats traditionnels. Nos invites parlent encore de cette soiree magique. Merci infiniment pour ce moment inoubliable!",
@@ -117,10 +120,10 @@ const realisationsData: Record<string, RealisationDetail> = {
       '/african-wedding-food-buffet.jpg',
     ],
     services: [
-      { nameFr: 'Lieu Premium', nameEn: 'Premium Venue', provider: 'Eko Hotels', icon: 'venue' },
-      { nameFr: 'Scenographie', nameEn: 'Stage Design', provider: 'Creative Stages', icon: 'decoration' },
-      { nameFr: 'Traiteur VIP', nameEn: 'VIP Catering', provider: 'Elite Catering', icon: 'catering' },
-      { nameFr: 'Sonorisation Pro', nameEn: 'Pro Sound System', provider: 'Sound Masters', icon: 'dj' },
+      { nameFr: 'Lieu Premium', nameEn: 'Premium Venue', provider: 'Eko Hotels', providerId: '6', providerRating: 4.8, providerReviews: 215, icon: 'venue' },
+      { nameFr: 'Scenographie', nameEn: 'Stage Design', provider: 'Creative Stages', providerId: '7', providerRating: 4.6, providerReviews: 54, icon: 'decoration' },
+      { nameFr: 'Traiteur VIP', nameEn: 'VIP Catering', provider: 'Elite Catering', providerId: '8', providerRating: 4.9, providerReviews: 178, icon: 'catering' },
+      { nameFr: 'Sonorisation Pro', nameEn: 'Pro Sound System', provider: 'Sound Masters', providerId: '9', providerRating: 4.7, providerReviews: 63, icon: 'dj' },
     ],
     testimonial: {
       textFr: "Organisation impeccable du debut a la fin. L'equipe a gere 800 invites avec professionnalisme. Un succes retentissant pour notre gala annuel!",
@@ -151,9 +154,9 @@ const realisationsData: Record<string, RealisationDetail> = {
       '/event-planner-coordination-clipboard.jpg',
     ],
     services: [
-      { nameFr: 'Decoration Thematique', nameEn: 'Themed Decoration', provider: 'Ivoire Deco', icon: 'decoration' },
-      { nameFr: 'Gastronomie Africaine', nameEn: 'African Gastronomy', provider: 'Chef Kouassi', icon: 'catering' },
-      { nameFr: 'Orchestre Live', nameEn: 'Live Orchestra', provider: 'Magic System Band', icon: 'dj' },
+      { nameFr: 'Decoration Thematique', nameEn: 'Themed Decoration', provider: 'Ivoire Deco', providerId: '10', providerRating: 4.8, providerReviews: 87, icon: 'decoration' },
+      { nameFr: 'Gastronomie Africaine', nameEn: 'African Gastronomy', provider: 'Chef Kouassi', providerId: '11', providerRating: 5.0, providerReviews: 142, icon: 'catering' },
+      { nameFr: 'Orchestre Live', nameEn: 'Live Orchestra', provider: 'Magic System Band', providerId: '12', providerRating: 4.9, providerReviews: 203, icon: 'dj' },
     ],
     testimonial: {
       textFr: "Ma femme et mes enfants ont organise cette fete surprise avec EvenIA. Je n'ai jamais ete aussi emu. Merci pour ces souvenirs precieux!",
@@ -184,10 +187,10 @@ const realisationsData: Record<string, RealisationDetail> = {
       '/event-planner-coordination-clipboard.jpg',
     ],
     services: [
-      { nameFr: 'Production Scenique', nameEn: 'Stage Production', provider: 'Afro Stage Pro', icon: 'decoration' },
-      { nameFr: 'Restauration Multi-Zones', nameEn: 'Multi-Zone Catering', provider: 'Festival Foods', icon: 'catering' },
-      { nameFr: 'Sonorisation Festival', nameEn: 'Festival Sound', provider: 'Sound Africa', icon: 'dj' },
-      { nameFr: 'Securite & Logistique', nameEn: 'Security & Logistics', provider: 'SafeEvent', icon: 'planner' },
+      { nameFr: 'Production Scenique', nameEn: 'Stage Production', provider: 'Afro Stage Pro', providerId: '13', providerRating: 4.7, providerReviews: 68, icon: 'decoration' },
+      { nameFr: 'Restauration Multi-Zones', nameEn: 'Multi-Zone Catering', provider: 'Festival Foods', providerId: '14', providerRating: 4.5, providerReviews: 112, icon: 'catering' },
+      { nameFr: 'Sonorisation Festival', nameEn: 'Festival Sound', provider: 'Sound Africa', providerId: '15', providerRating: 4.8, providerReviews: 91, icon: 'dj' },
+      { nameFr: 'Securite & Logistique', nameEn: 'Security & Logistics', provider: 'SafeEvent', providerId: '16', providerRating: 4.9, providerReviews: 156, icon: 'planner' },
     ],
     testimonial: {
       textFr: "Gerer un festival de cette envergure n'est pas une mince affaire. EvenIA a coordonne l'ensemble avec maestria. Le public etait enchante!",
@@ -218,10 +221,10 @@ const realisationsData: Record<string, RealisationDetail> = {
       '/event-planner-coordination-clipboard.jpg',
     ],
     services: [
-      { nameFr: 'Decoration Traditionnelle', nameEn: 'Traditional Decoration', provider: 'Cameroun Deco', icon: 'decoration' },
-      { nameFr: 'Cuisine Camerounaise', nameEn: 'Cameroonian Cuisine', provider: 'Mama Africa Catering', icon: 'catering' },
-      { nameFr: 'Groupe Musical Traditionnel', nameEn: 'Traditional Music Group', provider: 'Les Tetes Brulees', icon: 'dj' },
-      { nameFr: 'Photo & Video 4K', nameEn: '4K Photo & Video', provider: 'CamVision Studio', icon: 'photo' },
+      { nameFr: 'Decoration Traditionnelle', nameEn: 'Traditional Decoration', provider: 'Cameroun Deco', providerId: '17', providerRating: 4.6, providerReviews: 73, icon: 'decoration' },
+      { nameFr: 'Cuisine Camerounaise', nameEn: 'Cameroonian Cuisine', provider: 'Mama Africa Catering', providerId: '18', providerRating: 4.9, providerReviews: 189, icon: 'catering' },
+      { nameFr: 'Groupe Musical Traditionnel', nameEn: 'Traditional Music Group', provider: 'Les Tetes Brulees', providerId: '19', providerRating: 5.0, providerReviews: 245, icon: 'dj' },
+      { nameFr: 'Photo & Video 4K', nameEn: '4K Photo & Video', provider: 'CamVision Studio', providerId: '20', providerRating: 4.8, providerReviews: 98, icon: 'photo' },
     ],
     testimonial: {
       textFr: "Nos familles des deux cotes ont ete impressionnees par le respect des traditions tout en gardant une touche moderne. Un equilibre parfait!",
@@ -252,9 +255,9 @@ const realisationsData: Record<string, RealisationDetail> = {
       '/african-wedding-food-buffet.jpg',
     ],
     services: [
-      { nameFr: 'Scenographie Tech', nameEn: 'Tech Stage Design', provider: 'Digital Events', icon: 'decoration' },
-      { nameFr: 'Cocktail Premium', nameEn: 'Premium Cocktail', provider: 'Safari Catering', icon: 'catering' },
-      { nameFr: 'Production Audiovisuelle', nameEn: 'AV Production', provider: 'Kenya Media', icon: 'dj' },
+      { nameFr: 'Scenographie Tech', nameEn: 'Tech Stage Design', provider: 'Digital Events', providerId: '21', providerRating: 4.7, providerReviews: 56, icon: 'decoration' },
+      { nameFr: 'Cocktail Premium', nameEn: 'Premium Cocktail', provider: 'Safari Catering', providerId: '22', providerRating: 4.8, providerReviews: 134, icon: 'catering' },
+      { nameFr: 'Production Audiovisuelle', nameEn: 'AV Production', provider: 'Kenya Media', providerId: '23', providerRating: 4.9, providerReviews: 87, icon: 'dj' },
     ],
     testimonial: {
       textFr: "Le lancement a depasse toutes nos attentes. L'ambiance etait electrique et notre application a fait sensation. ROI excellent!",
@@ -446,25 +449,49 @@ export default function RealisationDetailPage({
                       {realisation.services.map((service, index) => (
                         <li 
                           key={index}
-                          className="flex items-start gap-4 pb-4 border-b border-border last:border-0 last:pb-0"
+                          className="pb-4 border-b border-border last:border-0 last:pb-0"
                         >
-                          <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                            <span className="text-primary text-lg">
-                              {service.icon === 'decoration' && '✨'}
-                              {service.icon === 'catering' && '🍽'}
-                              {service.icon === 'dj' && '🎵'}
-                              {service.icon === 'photo' && '📸'}
-                              {service.icon === 'planner' && '📋'}
-                              {service.icon === 'venue' && '🏛'}
-                            </span>
-                          </div>
-                          <div>
-                            <p className="font-medium text-foreground">
-                              {locale === 'fr' ? service.nameFr : service.nameEn}
-                            </p>
-                            <p className="text-sm text-muted-foreground">
-                              {service.provider}
-                            </p>
+                          <div className="flex items-start gap-4">
+                            <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                              <span className="text-primary text-lg">
+                                {service.icon === 'decoration' && '✨'}
+                                {service.icon === 'catering' && '🍽'}
+                                {service.icon === 'dj' && '🎵'}
+                                {service.icon === 'photo' && '📸'}
+                                {service.icon === 'planner' && '📋'}
+                                {service.icon === 'venue' && '🏛'}
+                              </span>
+                            </div>
+                            <div className="flex-1">
+                              <p className="font-medium text-foreground">
+                                {locale === 'fr' ? service.nameFr : service.nameEn}
+                              </p>
+                              <Link 
+                                href={`/marketplace/provider/${service.providerId}`}
+                                className="group mt-2 flex items-center gap-3 p-2 -mx-2 rounded-lg hover:bg-muted/50 transition-colors"
+                              >
+                                <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                                  <span className="text-xs font-semibold text-primary">
+                                    {service.provider.split(' ').map(n => n[0]).join('').slice(0, 2)}
+                                  </span>
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                  <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors truncate">
+                                    {service.provider}
+                                  </p>
+                                  <div className="flex items-center gap-2">
+                                    <div className="flex items-center gap-0.5">
+                                      <Star className="w-3 h-3 fill-accent text-accent" />
+                                      <span className="text-xs font-medium text-foreground">{service.providerRating}</span>
+                                    </div>
+                                    <span className="text-xs text-muted-foreground">
+                                      ({service.providerReviews} {locale === 'fr' ? 'avis' : 'reviews'})
+                                    </span>
+                                  </div>
+                                </div>
+                                <ArrowLeft className="w-4 h-4 text-muted-foreground rotate-180 opacity-0 group-hover:opacity-100 transition-opacity" />
+                              </Link>
+                            </div>
                           </div>
                         </li>
                       ))}
