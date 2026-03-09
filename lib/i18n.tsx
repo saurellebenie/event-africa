@@ -21,6 +21,7 @@ const translations = {
   'nav.customer': { fr: 'CLIENT', en: 'CUSTOMER' },
   'nav.provider': { fr: 'PRESTATAIRE', en: 'PROVIDER' },
   'nav.admin': { fr: 'ADMIN', en: 'ADMIN' },
+  'nav.realisations': { fr: 'Réalisations', en: 'Portfolio' },
 
   // ── Hero Section ──────────────────────────────────────
   'hero.badge': { fr: "Bienvenue sur la Plateforme Evenementielle d'Afrique", en: "Welcome to Africa's Event Platform" },
