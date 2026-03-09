@@ -6,8 +6,16 @@ import Link from 'next/link'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { ArrowRight } from 'lucide-react'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { ArrowRight, Star } from 'lucide-react'
 import { useI18n } from '@/lib/i18n'
+
+interface Creator {
+  id: string
+  name: string
+  avatar: string
+  rating: number
+}
 
 export interface Realisation {
   id: string
@@ -17,6 +25,7 @@ export interface Realisation {
   image: string
   category: string
   location: string
+  creator: Creator
 }
 
 const realisations: Realisation[] = [
@@ -28,6 +37,7 @@ const realisations: Realisation[] = [
     image: '/elegant-gold-wedding-decoration.jpg',
     category: 'Mariage',
     location: 'Dakar, Senegal',
+    creator: { id: '1', name: 'Crystal Venue Dakar', avatar: '/placeholder.svg', rating: 4.9 },
   },
   {
     id: '2',
@@ -37,6 +47,7 @@ const realisations: Realisation[] = [
     image: '/luxury-beachfront-wedding-venue.jpg',
     category: 'Corporate',
     location: 'Lagos, Nigeria',
+    creator: { id: '6', name: 'Eko Hotels & Suites', avatar: '/placeholder.svg', rating: 4.8 },
   },
   {
     id: '3',
@@ -46,6 +57,7 @@ const realisations: Realisation[] = [
     image: '/african-wedding-food-buffet.jpg',
     category: 'Anniversaire',
     location: 'Abidjan, Ivory Coast',
+    creator: { id: '10', name: 'Ivoire Deco Events', avatar: '/placeholder.svg', rating: 4.8 },
   },
   {
     id: '4',
@@ -55,6 +67,7 @@ const realisations: Realisation[] = [
     image: '/dj-wedding-mixing-console.jpg',
     category: 'Festival',
     location: 'Accra, Ghana',
+    creator: { id: '13', name: 'Afro Stage Productions', avatar: '/placeholder.svg', rating: 4.7 },
   },
   {
     id: '5',
@@ -64,6 +77,7 @@ const realisations: Realisation[] = [
     image: '/professional-wedding-photography.jpg',
     category: 'Mariage',
     location: 'Douala, Cameroun',
+    creator: { id: '17', name: 'Cameroun Deco Prestige', avatar: '/placeholder.svg', rating: 4.6 },
   },
   {
     id: '6',
@@ -73,6 +87,7 @@ const realisations: Realisation[] = [
     image: '/event-planner-coordination-clipboard.jpg',
     category: 'Corporate',
     location: 'Nairobi, Kenya',
+    creator: { id: '21', name: 'Crystal Venue Nairobi', avatar: '/placeholder.svg', rating: 4.9 },
   },
 ]
 
@@ -143,6 +158,21 @@ export default function RealisationsSection() {
                     <p className="text-sm text-card/80">
                       {realisation.location}
                     </p>
+
+                    {/* Creator info */}
+                    <div className="flex items-center gap-2 mt-3 pt-3 border-t border-card/20">
+                      <Avatar className="w-6 h-6">
+                        <AvatarImage src={realisation.creator.avatar} />
+                        <AvatarFallback className="bg-primary text-primary-foreground text-xs">
+                          {realisation.creator.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
+                        </AvatarFallback>
+                      </Avatar>
+                      <span className="text-xs text-card/90 truncate flex-1">{realisation.creator.name}</span>
+                      <div className="flex items-center gap-0.5">
+                        <Star className="w-3 h-3 fill-accent text-accent" />
+                        <span className="text-xs text-card/90">{realisation.creator.rating}</span>
+                      </div>
+                    </div>
 
                     {/* Animated arrow on hover */}
                     <div 
