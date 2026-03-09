@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Navigation from '@/components/navigation'
 import HeroSection from '@/components/hero-section'
 import ServicePortfolio from '@/components/service-portfolio'
+import RealisationsSection from '@/components/realisations-section'
 import FeaturesSection from '@/components/features-section'
 import AuthModal from '@/components/auth-modal'
 import { useI18n } from '@/lib/i18n'
@@ -19,6 +20,9 @@ export default function Home() {
       <div className="pt-16">
         <HeroSection onGetStarted={() => setAuthModal('signup')} />
         <ServicePortfolio />
+        <div id="realisations">
+          <RealisationsSection />
+        </div>
         <FeaturesSection />
       </div>
 
