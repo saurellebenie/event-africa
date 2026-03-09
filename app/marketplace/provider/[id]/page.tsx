@@ -24,6 +24,35 @@ const mockProvider = {
   availability: ['Mon-Fri', 'Weekends', 'Holidays'],
   responseTime: '< 2 hours',
   yearsExperience: 8,
+  realisations: [
+    {
+      id: '6',
+      titleFr: 'Lancement Produit Fintech',
+      titleEn: 'Fintech Product Launch',
+      year: 2024,
+      image: '/event-planner-coordination-clipboard.jpg',
+      category: 'Corporate',
+      location: 'Nairobi, Kenya',
+    },
+    {
+      id: '1',
+      titleFr: 'Mariage Royal Ndiaye-Diallo',
+      titleEn: 'Royal Ndiaye-Diallo Wedding',
+      year: 2024,
+      image: '/elegant-gold-wedding-decoration.jpg',
+      category: 'Mariage',
+      location: 'Nairobi, Kenya',
+    },
+    {
+      id: '2',
+      titleFr: 'Gala Annuel Tech Africa',
+      titleEn: 'Tech Africa Annual Gala',
+      year: 2024,
+      image: '/luxury-beachfront-wedding-venue.jpg',
+      category: 'Corporate',
+      location: 'Nairobi, Kenya',
+    },
+  ],
 }
 
 export default function ProviderPage({ params }: { params: { id: string } }) {
